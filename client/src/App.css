@@ -1,0 +1,65 @@
+#ItemsList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 98%;
+    margin-left: auto;
+    
+  }
+  #Card{
+    margin: 10px;
+    margin-top: 30px;
+    width: 250px;
+    text-align: center;
+  }
+  #Item{
+    color: white;
+    font-weight: bolder;
+    background-color: cornflowerblue;
+    height: 300px;
+  
+  }
+  
+  #Item > img{
+    margin-top: 10px;
+    background-color: white;
+  }
+  
+  #InputBar{
+    background-color: gray;
+    padding: 10px;
+  }
+  
+  #InputBar > *{
+    display: inline-block;
+    margin-right: 10px;
+    
+  }
+  #InputBar > form > input{
+    width: 90px;
+    
+  }
+  #NavBar{
+    background-color: cornflowerblue;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+  }
+  #NavBar > h1 {
+    color: white;
+  }
+  #NavBar > *{
+    display: inline-block;
+    margin-right: 2vw;
+  }
+  #NavBar > form > input{
+     width: 50vw;
+     height: 30px;
+     font-size: large;
+  }
+  #NavBar > #NavButtons > *{
+    width: 70px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  

@@ -1,5 +1,5 @@
 import React from "react"
-import ShoppingBar from "./ShoppingBar"
+import SearchViewBar from "./SearchViewBar"
 import CartBar from "./CartBar"
 
 
