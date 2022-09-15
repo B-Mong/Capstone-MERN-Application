@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
-function App() {
+import './App.css';
+import Item from './components/Item';
+import NavBar from './components/NavBar';
 
   const query = [
     {id:7, title:"Samsung Galaxy Book", description:"Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched", price:1499, discountPercentage:4.15,rating:4.25,stock:50,brand:"Samsung",category:"laptops",thumbnail:"https://dummyjson.com/image/i/products/7/thumbnail.jpg","images":["https://dummyjson.com/image/i/products/7/1.jpg","https://dummyjson.com/image/i/products/7/2.jpg","https://dummyjson.com/image/i/products/7/3.jpg","https://dummyjson.com/image/i/products/7/thumbnail.jpg"]},
@@ -9,7 +11,6 @@ function App() {
 
   const searchQuery = 
   const [routeMessage, setRouteMessage] = useState('')
-
   //connection to back-end with useEffect
   //doesn't really work yet but we can start making our components
   useEffect(()=>{
@@ -18,14 +19,23 @@ function App() {
     //data passed in from back-end
     .then((data)=>setRouteMessage(data))
   },[])
-
   
+
   return (
-    <div className="App">
-      <h1>WE UP</h1>
-      <h1>{routeMessage}</h1>
+    <div id='App'>
+      <NavBar/>
+      {Cards()}
     </div>
   );
+}
+
+
+function Cards(){
+  let cards = [];
+  for(let i = 0; i <12; i++ ){
+    cards.push(<Item name = {'test'+i} price = {20.00+i*3} description = 'Description Description Description'  isInCart = {j}/>)
+  }
+  return <div id='ItemsList'> {cards} </div>
 }
 
 export default App;
