@@ -3,7 +3,7 @@ import SearchViewBar from "./SearchViewBar"
 import CartBar from "./CartBar"
 
 
-function Item(props){
+function Card(props){
     return(
         <div id="Card">
             <div id="Item">
@@ -34,4 +34,4 @@ function RenderBar(props){
         )
     }
 }
-export default Item
+export default Card
