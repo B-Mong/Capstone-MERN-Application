@@ -19,6 +19,7 @@ function ItemView(){
     return(
       <div id='App'>
         <NavBar/>
+        
         {RenderPage(test)}
         {/* {!data ? 'Loading...': RenderPage(test)} */}
       </div>
@@ -36,7 +37,7 @@ function RenderPage(data){
 
                 <div id="InfoSection">
                     <h2>Rating: </h2>
-                    <p>{data.rating}</p>
+                    <p>{Rating(data.rating)}</p>
                 </div>
                 
                 <div id="InfoSection">
@@ -50,13 +51,23 @@ function RenderPage(data){
                 </div>
 
                 <form action="/additem" method="POST">
-                    <button name="id" value={data.id}>+</button>
+                    <button name="id" value={data.id}>Add To Cart</button>
                 </form>
             </div>
             
            
         </div>
     )
+}
+
+function Rating(rating){
+    let s = ''
+
+    for (let i = 0; i < Math.round(rating); i++) {
+        s += '★'
+    }
+
+    return s
 }
 
 export default ItemView
