@@ -1,42 +1,24 @@
-import { useEffect, useState } from 'react'
-import './App.css';
-import Card from './components/Card';
-import NavBar from './components/NavBar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
-let j = 0
+import './App.css'
+import CartView from './pages/CartView'
+import ShopView from './pages/ShopView'
+import ItemView from './pages/ItemView'
 
 function App() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('/test')
-      .then((res) => res.json())
-      .then((data) => setData(data.testData));
-  }, []);
-  
 
   return (
-    <div id='App'>
-      <NavBar/>
-      {!data ? 'Loading...': CreateCards(data)}
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<ShopView/>}/>
+        <Route path='/cart' element={<CartView/>}/>
+        <Route path='/products/:id' element={<ItemView/>}/>
+      </Routes>
+    </Router>
+
+
+    
   );
-}
-
-
-function CreateCards(data){
-  let cards = [];
-
-  return(
-    <div id='ItemsList'>
-      {data.map((d) => {
-        return(
-          <Card img = {d.images[0]} name = {d.title} price = {d.price} description = {d.description}  isInCart = {j}/>
-        )
-      })}
-    </div>
-
-  )
 }
 
 export default App;

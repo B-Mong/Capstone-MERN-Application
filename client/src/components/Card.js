@@ -1,6 +1,6 @@
 import React from "react"
-import SearchViewBar from "./SearchViewBar"
 import CartBar from "./CartBar"
+import ShopBar from "./ShopBar"
 
 
 function Card(props){
@@ -23,14 +23,16 @@ function Card(props){
 
 
 function RenderBar(props){
-    if(props.isCart == 0){
+
+    console.log(props.isInCart)
+    if(props.isInCart == 0){
         return (
-            <CartBar/>
+            <CartBar id = {props.id}/>
         )
     }
     else{
         return (
-            <SearchViewBar/>
+            <ShopBar id = {props.id}/>
         )
     }
 }

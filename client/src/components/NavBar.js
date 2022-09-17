@@ -8,8 +8,12 @@ function NavBar(props){
                 <input type="text"/>
             </form>
             <div id="NavButtons">
-                <button>Home</button>
-                <button>Cart</button>
+                <a href="/">
+                    <button>Home</button>
+                </a>
+                <a href="/cart">
+                    <button>Cart</button>
+                </a>
             </div>
         </header>
     )
