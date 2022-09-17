@@ -25,12 +25,12 @@ function Card(props){
 function RenderBar(props){
     if(props.isCart == 0){
         return (
-            <CartBar/>
+            <CartBar id = {props.id}/>
         )
     }
     else{
         return (
-            <SearchViewBar/>
+            <SearchViewBar id = {props.id}/>
         )
     }
 }
