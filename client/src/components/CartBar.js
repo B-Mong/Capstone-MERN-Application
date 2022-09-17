@@ -9,7 +9,9 @@ function CartBar(props){
             <form>
                 <input type="number" min="0"/>
             </form>
-            <button>View</button>
+            <a href={`/products/${props.id}`}>
+                <button>View</button>
+            </a>
         </div>
     )
 }

@@ -6,7 +6,9 @@ function ShopBar(props){
             <form action="/addtocart" method="POST">
                 <button name="id" value={props.id}>+</button>
             </form>
-            <button>View</button>
+            <a href={`/products/${props.id}`}>
+                <button>View</button>
+            </a>
         </div>
     )
 }
