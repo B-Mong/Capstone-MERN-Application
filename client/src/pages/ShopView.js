@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react'
 import Card from "../components/Card"
 import NavBar from "../components/NavBar"
 
-function Shop(){
+function ShopView(){
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        fetch('/test')
+        fetch('/products')
         .then((res) => res.json())
         .then((data) => setData(data.testData))
     }, []);
@@ -25,7 +25,7 @@ function CreateCards(data){
       <div id='ItemsList'>
         {data.map((d) => {
           return(
-            <Card img = {d.images[0]} name = {d.title} price = {d.price} description = {d.description} id = {d.id}  isInCart = {0}/>
+            <Card img = {d.images[0]} name = {d.title} price = {d.price} description = {d.description} id = {d.id}  isInCart = {1}/>
           )
         })}
       </div>
@@ -33,4 +33,4 @@ function CreateCards(data){
     )
   }
 
-export default Shop
+export default ShopView

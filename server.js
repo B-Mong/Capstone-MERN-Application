@@ -16,12 +16,12 @@ let testData = [{id:7, title:"Samsung Galaxy Book", description:"Samsung Galaxy 
 app.get('/products',(req,res) => {
   res.json({testData})
 })
-app.post('/addtocart', (req, res)=>{
+app.post('/additem', (req, res)=>{
   console.log(req.body)
-  res.send('success')
+  res.redirect('/')
 })
-app.get('*', (req, res)=>{
-  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'))
+app.get('/*', (req, res)=>{
+  res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
 app.listen(3001, ()=>{
   console.log('listening on port 3001')

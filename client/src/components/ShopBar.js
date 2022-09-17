@@ -1,9 +1,8 @@
 import React from "react"
 
-function SearchViewBar(props){
+function ShopBar(props){
     return(
         <div id="InputBar">
-            {/* method='POST' action='/places' */}
             <form action="/addtocart" method="POST">
                 <button name="id" value={props.id}>+</button>
             </form>
@@ -12,4 +11,4 @@ function SearchViewBar(props){
     )
 }
 
-export default SearchViewBar
+export default ShopBar
