@@ -1,5 +1,6 @@
 import React from "react"
 import CartBar from "./CartBar"
+import InCartCount from "./InCartCount"
 import ShopBar from "./ShopBar"
 
 
@@ -11,8 +12,7 @@ function Card(props){
                 <h2>{props.name}</h2>
                 <p>${props.price}</p>
                 <p>{props.description}</p>
-                {/* displays how much is currently in cart */}
-                <p>Quantity: 0</p>
+                <InCartCount/>
             </div>
             {RenderBar(props)}
         </div>

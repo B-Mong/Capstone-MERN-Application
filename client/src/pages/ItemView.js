@@ -2,6 +2,7 @@ import React from "react"
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
+import InCartCount from "../components/InCartCount"
 
 let test = {id:7, title:"Samsung Galaxy Book", description:"Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched", price:1499, discountPercentage:4.15, rating:4.25, stock:50,brand:"Samsung",category:"laptops",thumbnail:"https://dummyjson.com/image/i/products/7/thumbnail.jpg",images:["https://dummyjson.com/image/i/products/7/1.jpg","https://dummyjson.com/image/i/products/7/2.jpg","https://dummyjson.com/image/i/products/7/3.jpg","https://dummyjson.com/image/i/products/7/thumbnail.jpg"]}
 function ItemView(){
@@ -49,6 +50,8 @@ function RenderPage(data){
                     <h2>Description</h2>
                     <p>{data.description}</p>
                 </div>
+
+                <InCartCount/>
 
                 <form action="/additem" method="POST">
                     <button name="id" value={data.id}>Add To Cart</button>
