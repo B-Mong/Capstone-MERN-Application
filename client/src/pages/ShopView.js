@@ -3,12 +3,13 @@ import { useEffect, useState } from 'react'
 
 import Card from "../components/Card"
 import NavBar from "../components/NavBar"
+//REACT_API_URL = 'http://localhost:3001/api'
 
 function ShopView(){
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        fetch('/products')
+        fetch(process.env.REACT_API_URL + '/products')
         .then((res) => res.json())
         .then((data) => setData(data.testData))
     }, []);

@@ -2,7 +2,7 @@ import React from "react"
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
-
+//REACT_API_URL = 'http://localhost:3001/api'
 
 function ItemView(){
 
@@ -11,7 +11,7 @@ function ItemView(){
     console.log(id)
 
     useEffect(() => {
-        fetch(`/${id}`)
+        fetch(process.env.REACT_API_URL + `/products/${id}`)
         .then((res) => res.json())
         .then((data) => setData(data.testData))
     }, []);
