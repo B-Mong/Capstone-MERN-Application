@@ -11,7 +11,7 @@ function ItemView(){
     console.log(id)
 
     useEffect(() => {
-        fetch(`/${id}`)
+        fetch(process.env.REACT_API_URL + `/products/${id}`)
         .then((res) => res.json())
         .then((data) => setData(data.testData))
     }, []);

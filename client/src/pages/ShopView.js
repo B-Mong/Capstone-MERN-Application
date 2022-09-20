@@ -8,7 +8,7 @@ function ShopView(){
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        fetch('/products')
+        fetch(process.env.REACT_API_URL + '/products')
         .then((res) => res.json())
         .then((data) => setData(data.testData))
     }, []);
