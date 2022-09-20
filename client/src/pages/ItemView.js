@@ -2,7 +2,7 @@ import React from "react"
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
-
+//REACT_API_URL = 'http://localhost:3001/api'
 
 function ItemView(){
 

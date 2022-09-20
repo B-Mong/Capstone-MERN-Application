@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 import Card from "../components/Card"
 import NavBar from "../components/NavBar"
+//REACT_API_URL = 'http://localhost:3001/api'
 
 function ShopView(){
     const [data, setData] = useState(null)
