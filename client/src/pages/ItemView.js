@@ -11,18 +11,16 @@ function ItemView(){
     const {id} = useParams()
     console.log(id)
 
-    // useEffect(() => {
-    //     fetch(`/${id}`)
-    //     .then((res) => res.json())
-    //     .then((data) => setData(data.testData))
-    // }, []);
+    useEffect(() => {
+        fetch(`/find/${id}`)
+        .then((res) => res.json())
+        .then((data) => setData(data))
+    }, []);
 
     return(
       <div id='App'>
         <NavBar/>
-        
-        {RenderPage(test)}
-        {/* {!data ? 'Loading...': RenderPage(test)} */}
+        {!data ? 'Loading...': RenderPage(data)}
       </div>
     )
 }
