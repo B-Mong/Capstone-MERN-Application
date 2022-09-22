@@ -40,11 +40,11 @@ button{
   font-size: medium;
 
 }
-#NavBar > #NavButtons > a{
+a{
   
   color: white;
 }
-#NavBar > #NavButtons > a:hover{
+a:hover{
   
   color: lightgrey;
 }
@@ -67,6 +67,7 @@ button{
     color: white;
     background-color: cornflowerblue;
     height: 370px;
+    overflow-y: auto;
   }
   #Item>*{
     margin-left: 15px;
