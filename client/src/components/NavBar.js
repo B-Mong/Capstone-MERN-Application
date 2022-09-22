@@ -4,7 +4,7 @@ import {Cart3,Shop} from 'react-bootstrap-icons'
 function NavBar(){
     return(
         <header id="NavBar">
-            <h1>Placeholder</h1>
+            <h1>E-commerce</h1>
             
             <div id="NavButtons">
                 <a href="/">
