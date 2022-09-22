@@ -80,6 +80,21 @@ app.put('/api/cart/count/:id', (req, res)=>{
   .then(() => res.redirect('/cart') )
 })
 
+app.get('/api/cart/count', (req, res)=>{
+  db.Item.find()
+  .then(items => {
+    console.log(items)
+    console.log(items.length)
+    if(items.length != 0){
+      let counts = items.map(i => {return i.quantity})
+      res.json(counts.reduce((pv,cv) => pv+cv, 0))
+    }
+    else{
+      res.json('0')
+    }
+  }) 
+})
+
 app.get('/*', (req, res)=>{
   res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
