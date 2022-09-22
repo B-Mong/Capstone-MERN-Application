@@ -3,7 +3,7 @@ import { link } from 'react-router-dom';
 function ShopBar(props){
     return(
         <div id="InputBar">
-            <form action="/addtocart" method="POST">
+            <form action="/additem" method="POST">
                 <button name="id" value={props.id}>+</button>
             </form>
             <Link to={`/products/${props.id}`}>

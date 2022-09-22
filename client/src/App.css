@@ -1,3 +1,57 @@
+button{
+  border-style:hidden;
+}
+
+#NavBar{
+  display: flex;
+  justify-content: space-between;
+  background-color: cornflowerblue;
+  width: 100%;
+  height: 100px;
+  margin-left: px;
+}
+#NavBar > h1 {
+
+  margin-left: 20px;
+  color: white;
+}
+#NavBar > *{
+  vertical-align: middle;
+  margin-top: 23px;
+  display: inline-block;
+  margin-right: 2vw;
+}
+#NavBar > form > input{
+   width: 50vw;
+   height: 30px;
+   font-size: large;
+}
+
+#NavBar > #NavButtons > *{
+  margin-right: 10px;
+  display: inline;
+}
+
+
+#NavBar > #NavButtons > a > *{
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  font-size: medium;
+
+}
+#NavBar > #NavButtons > a{
+  
+  color: white;
+}
+#NavBar > #NavButtons > a:hover{
+  
+  color: lightgrey;
+}
+
+
+
+
 #ItemsList{
     display: flex;
     flex-wrap: wrap;
@@ -7,17 +61,19 @@
     
   }
   #Card{
-    margin: 10px;
     margin-top: 30px;
     width: 250px;
     text-align: center;
   }
   #Item{
     color: white;
-    font-weight: bolder;
     background-color: cornflowerblue;
-    height: 300px;
-  
+    height: 370px;
+  }
+  #Item>*{
+    margin-left: 5px;
+    margin-bottom: 15px;
+    margin-right: 5px;
   }
   
   #Item > img{
@@ -28,6 +84,8 @@
   #InputBar{
     background-color: gray;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
   }
   
   #InputBar > *{
@@ -39,27 +97,37 @@
     width: 90px;
     
   }
-  #NavBar{
-    background-color: cornflowerblue;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-  }
-  #NavBar > h1 {
+ 
+  #ItemDisplay{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 80%;
     color: white;
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
-  #NavBar > *{
+  #Info{
+    width: 500px;
+  }
+  #Info>*{
+    margin-bottom: 25px
+  }
+  #InfoSection > *{
     display: inline-block;
-    margin-right: 2vw;
+    margin-right: 5px;
   }
-  #NavBar > form > input{
-     width: 50vw;
-     height: 30px;
-     font-size: large;
+  #ItemDisplay>*{
+    margin: 20px;
   }
-  #NavBar > #NavButtons > *{
-    width: 70px;
-    height: 40px;
-    margin-right: 10px;
+  #Picture>img{
+    width: 35vw;
   }
+
+
   

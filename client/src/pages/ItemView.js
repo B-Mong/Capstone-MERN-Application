@@ -2,6 +2,9 @@ import React from "react"
 import { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
+
+import InCartCount from "../components/InCartCount"
+
 //REACT_API_URL = 'http://localhost:3001/api'
 
 function ItemView(){
@@ -11,9 +14,10 @@ function ItemView(){
     console.log(id)
 
     useEffect(() => {
+
         fetch(process.env.REACT_API_URL + `/products/${id}`)
         .then((res) => res.json())
-        .then((data) => setData(data.testData))
+        .then((data) => setData(data))
     }, []);
 
     return(
@@ -26,13 +30,48 @@ function ItemView(){
 
 function RenderPage(data){
     return(
-        <div id="Item">
-            <img src={data.img} width={100} height={100}/>
-            <h2>{data.name}</h2>
-            <p>${data.price}</p>
-            <p>{data.description}</p>
+        <div id="ItemDisplay">
+            <div id="Picture">
+                <img src={data.images[0]}/> 
+            </div>
+            <div id="Info">
+                <h1>{data.title}</h1>
+
+                <div id="InfoSection">
+                    <h2>Rating: </h2>
+                    <p>{Rating(data.rating)}</p>
+                </div>
+                
+                <div id="InfoSection">
+                    <h2>Price: </h2>
+                    <p>${data.price}</p>
+                </div>
+                
+                <div id="Description">
+                    <h2>Description</h2>
+                    <p>{data.description}</p>
+                </div>
+
+                <InCartCount/>
+
+                <form action="/additem" method="POST">
+                    <button name="id" value={data.id}>Add To Cart</button>
+                </form>
+            </div>
+            
+           
         </div>
     )
+}
+
+function Rating(rating){
+    let s = ''
+
+    for (let i = 0; i < Math.round(rating); i++) {
+        s += '★'
+    }
+
+    return s
 }
 
 export default ItemView

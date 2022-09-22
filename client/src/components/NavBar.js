@@ -1,18 +1,17 @@
 import React from "react"
+import {Cart3,Shop} from 'react-bootstrap-icons'
 
-function NavBar(props){
+function NavBar(){
     return(
         <header id="NavBar">
             <h1>Placeholder</h1>
-            <form id="Search">
-                <input type="text"/>
-            </form>
+            
             <div id="NavButtons">
                 <a href="/">
-                    <button>Home</button>
+                    <Shop/>
                 </a>
                 <a href="/cart">
-                    <button>Cart</button>
+                    <Cart3/>
                 </a>
             </div>
         </header>

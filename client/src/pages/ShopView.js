@@ -11,7 +11,10 @@ function ShopView(){
     useEffect(() => {
         fetch(process.env.REACT_API_URL + '/products')
         .then((res) => res.json())
-        .then((data) => setData(data.testData))
+        .then((data) => {
+          console.log(data)
+          setData(data.products)
+        })
     }, []);
 
     return (

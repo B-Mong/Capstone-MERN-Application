@@ -12,7 +12,7 @@ function CartView(){
     useEffect(() => {
         fetch('/products')
         .then((res) => res.json())
-        .then((data) => setData(data.testData))
+        .then((data) => setData(data.products))
     }, []);
 
     return(
