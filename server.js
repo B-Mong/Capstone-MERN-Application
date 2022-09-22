@@ -8,11 +8,9 @@ app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.resolve(__dirname, './client/build')));
 
-//add routes
-
 //Products controller
 const productRoutes = require('./routes/products')
-
+const cartRoutes = require('./routes/cart')
 
 
 // app.get('/products',(req,res) => {
@@ -28,6 +26,10 @@ const productRoutes = require('./routes/products')
 
 app.use('/api/products', productRoutes)
 
+app.get('/incart', (req,res)=>{
+
+})
+app.get
 app.listen(process.env.PORT, ()=>{
   console.log('listening on port 3001')
 })
