@@ -1,5 +1,5 @@
 import React from "react"
-import {Cart3, Shop} from 'react-bootstrap-icons'
+import {Cart3,Shop} from 'react-bootstrap-icons'
 
 function NavBar(){
     return(
