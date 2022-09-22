@@ -4,25 +4,22 @@ import { useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
 import InCartCount from "../components/InCartCount"
 
-let test = {id:7, title:"Samsung Galaxy Book", description:"Samsung Galaxy Book S (2020) Laptop With Intel Lakefield Chip, 8GB of RAM Launched", price:1499, discountPercentage:4.15, rating:4.25, stock:50,brand:"Samsung",category:"laptops",thumbnail:"https://dummyjson.com/image/i/products/7/thumbnail.jpg",images:["https://dummyjson.com/image/i/products/7/1.jpg","https://dummyjson.com/image/i/products/7/2.jpg","https://dummyjson.com/image/i/products/7/3.jpg","https://dummyjson.com/image/i/products/7/thumbnail.jpg"]}
 function ItemView(){
 
     const [data, setData] = useState(null)
     const {id} = useParams()
     console.log(id)
 
-    // useEffect(() => {
-    //     fetch(`/${id}`)
-    //     .then((res) => res.json())
-    //     .then((data) => setData(data.testData))
-    // }, []);
+    useEffect(() => {
+        fetch(`/api/products/${id}`)
+        .then((res) => res.json())
+        .then((data) => setData(data))
+    }, []);
 
     return(
       <div id='App'>
         <NavBar/>
-        
-        {RenderPage(test)}
-        {/* {!data ? 'Loading...': RenderPage(test)} */}
+        {!data ? 'Loading...': RenderPage(data)}
       </div>
     )
 }
@@ -51,9 +48,9 @@ function RenderPage(data){
                     <p>{data.description}</p>
                 </div>
 
-                <InCartCount/>
+                <InCartCount id = {data.id}/>
 
-                <form action="/additem" method="POST">
+                <form action="/api/additem" method="POST">
                     <button name="id" value={data.id}>Add To Cart</button>
                 </form>
             </div>

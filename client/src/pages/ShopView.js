@@ -8,9 +8,12 @@ function ShopView(){
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        fetch('/products')
+        fetch('/api/products')
         .then((res) => res.json())
-        .then((data) => setData(data.testData))
+        .then((data) => {
+          console.log(data)
+          setData(data.products)
+        })
     }, []);
 
     return (
