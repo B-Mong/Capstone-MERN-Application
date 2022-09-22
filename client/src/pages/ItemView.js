@@ -52,10 +52,10 @@ function RenderPage(data){
                     <p>{data.description}</p>
                 </div>
 
-                <InCartCount id = {id}/>
+                <InCartCount id = {data.id}/>
 
                 <form action="/additem" method="POST">
-                    <button name="id" value={id}>Add To Cart</button>
+                    <button name="id" value={data.id}>Add To Cart</button>
                 </form>
             </div>
             
