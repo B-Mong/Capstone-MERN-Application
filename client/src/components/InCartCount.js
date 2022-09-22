@@ -1,11 +1,11 @@
-import React, { useEffect } from "react"
+import { useEffect, useState } from 'react'
 
 function InCartCount(props){
 
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        fetch(`/incart/count/${props.id}`)
+        fetch(`/api/cart/count/${props.id}`)
         .then((res) => res.json())
         .then((data) => setData(data))
     }, []);

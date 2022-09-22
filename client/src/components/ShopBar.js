@@ -1,14 +1,15 @@
 import React from "react"
-import { link } from 'react-router-dom';
+import {Search,Plus} from 'react-bootstrap-icons'
+
 function ShopBar(props){
     return(
         <div id="InputBar">
-            <form action="/additem" method="POST">
-                <button name="id" value={props.id}>+</button>
+            <form action="/api/additem" method="POST" name="id" value={props.id}>
+                <button name="id" value={props.id}><Plus/></button>
             </form>
-            <Link to={`/products/${props.id}`}>
-                <button>View</button>
-            </Link>
+            <a href={`/products/${props.id}`}>
+                <Search/>
+            </a>
         </div>
     )
 }
