@@ -1,6 +1,6 @@
 const { Pool } = require('pg')
 
-const pool = new Pool({
+ const pool = new Pool({
   //environment variables, connect to a database called cart
   user: process.env.PG_USER,
   password: process.env.PG_PASSWORD,
