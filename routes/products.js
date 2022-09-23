@@ -1,19 +1,17 @@
 const express = require('express')
 const { getProducts } = require('../controllers/products')
 const router = express.Router()
-
+const axios = require('axios')
 router.route('/')
 
 router.get('/',(req,res)=>{
-  console.log('get /products')
-  const result = res.json({getProducts})
-  console.log(result)
+  const products = res.json(axios.get('https://dummyjson.com/products'))
+  res.send('hit route')
 })
 
 router.get('/:id',(req,res)=>{
   console.log('get /products/id')
+  //send query data up from form, insert it into dummyjson url?
 })
-
-//route for individual products
 
 module.exports = router
