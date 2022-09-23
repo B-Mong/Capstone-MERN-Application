@@ -12,7 +12,7 @@ function Card(props){
                 <h2>{props.name}</h2>
                 <p>${props.price}</p>
                 <p>{props.description}</p>
-                <InCartCount/>
+                <InCartCount id = {props.id}/>
             </div>
             {RenderBar(props)}
         </div>
