@@ -9,7 +9,3 @@ root.render(
     <App />
   </React.StrictMode>
 );
-
-
-
-// https://mern-e-commerce-site.herokuapp.com
