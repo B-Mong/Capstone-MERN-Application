@@ -6,7 +6,7 @@ router.route('/')
 
 router.get('/',(req,res)=>{
   const products = res.json(axios.get('https://dummyjson.com/products'))
-  res.send('hit route')
+  res.send(products)
 })
 
 router.get('/:id',(req,res)=>{
