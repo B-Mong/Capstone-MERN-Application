@@ -1,7 +1,3 @@
-button{
-  border-style:hidden;
-}
-
 #NavBar{
   display: flex;
   justify-content: space-between;
@@ -27,53 +23,59 @@ button{
    font-size: large;
 }
 
-#NavBar > #NavButtons > *{
-  margin-right: 10px;
+#NavButtons > *{
+  margin-right: 20px;
+  display: inline;
+}
+#NavButtons > a > div{
   display: inline;
 }
 
-
-#NavBar > #NavButtons > a > *{
+#NavButtons > a > div > :not(p){
   width: 40px;
   height: 40px;
   margin-left: 10px;
   font-size: medium;
 
 }
-#NavBar > #NavButtons > a{
-  
+#NavButtons > a > div > p{
+  position: absolute;
+  display: inline;
+}
+
+a{
+  text-decoration: none;
   color: white;
 }
-#NavBar > #NavButtons > a:hover{
+a:hover{
   
   color: lightgrey;
 }
 
 
-
-
 #ItemsList{
     display: flex;
     flex-wrap: wrap;
-    justify-content: start;
-    width: 98%;
-    margin-left: auto;
+    justify-content: space-evenly;
     
   }
   #Card{
     margin-top: 30px;
     width: 250px;
     text-align: center;
+    margin-right: 15px;
+    margin-left: 15px;
   }
   #Item{
     color: white;
     background-color: cornflowerblue;
     height: 370px;
+    overflow-y: auto;
   }
   #Item>*{
-    margin-left: 5px;
+    margin-left: 15px;
     margin-bottom: 15px;
-    margin-right: 5px;
+    margin-right: 15px;
   }
   
   #Item > img{
@@ -90,12 +92,36 @@ button{
   
   #InputBar > *{
     display: inline-block;
-    margin-right: 10px;
-    
   }
+  
   #InputBar > form > input{
-    width: 90px;
-    
+    margin-top: 4px;
+    margin-right: 15px;
+    width: 125px;
+  }
+
+  #InputBar> a {
+    margin-right: 10px;
+  }
+
+  #InputBar > a > *{
+    margin-top: 6px;
+    font-weight: bold;
+  }
+
+  #InputBar > form > button{
+    background-color: transparent;
+    border-style: none;
+    color: white;
+  }
+
+  #InputBar > form > button:hover{
+    color: lightgray;
+  }
+
+  #InputBar > form > button>*{
+    font-weight: bold;
+    font-size: x-large;
   }
  
   #ItemDisplay{
@@ -112,22 +138,24 @@ button{
     flex-direction: row;
     flex-wrap: wrap;
   }
+
   #Info{
     width: 500px;
   }
+
   #Info>*{
     margin-bottom: 25px
   }
+
   #InfoSection > *{
     display: inline-block;
     margin-right: 5px;
   }
+
   #ItemDisplay>*{
     margin: 20px;
   }
+
   #Picture>img{
     width: 35vw;
   }
-
-
-  
