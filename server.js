@@ -6,6 +6,7 @@ const db = require('./models')
 const methodOverride = require('method-override');
 require('dotenv').config()
 
+
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
@@ -15,6 +16,7 @@ app.get('/api/products',(req,res) => {
   fetch('https://dummyjson.com/products')
   .then(response => response.json())
   .then(json => res.json(json))
+
 
 })
 app.get ('/api/cart',(req,res) => {

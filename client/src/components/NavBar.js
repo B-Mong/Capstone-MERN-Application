@@ -11,7 +11,7 @@ function NavBar(){
         .then((res) => res.json())
         .then((data) => setData(data))
     }, []);
-
+function NavBar(){
     return(
         <header id="NavBar">
             <h1>E-commerce</h1>
@@ -28,6 +28,7 @@ function NavBar(){
                             <p>{!data ? '?': data}</p>
                         </div>
                     </a>
+
             </div>
         </header>
     )
