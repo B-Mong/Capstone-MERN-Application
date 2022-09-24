@@ -2,6 +2,7 @@ import React from "react"
 import {Search,Plus} from 'react-bootstrap-icons'
 
 function ShopBar(props){
+    console.log(props.id)
     return(
         <div id="InputBar">
             <form action="/api/additem" method="POST" name="id" value={props.id}>

@@ -1,18 +1,17 @@
 import React from "react"
 import { useEffect, useState } from 'react'
-
 import Card from "../components/Card"
 import NavBar from "../components/NavBar"
 
 
 function CartView(){
-
     const [data, setData] = useState(null)
 
     useEffect(() => {
-        fetch('/products')
+        fetch('/api/cart')
         .then((res) => res.json())
-        .then((data) => setData(data.products))
+        .then((data) => {
+          setData(data)})
     }, []);
 
     return(
@@ -26,6 +25,7 @@ function CreateCards(data){
     return(
       <div id='ItemsList'>
         {data.map((d) => {
+          console.log (data)
           return(
             <Card img = {d.images[0]} name = {d.title} price = {d.price} description = {d.description} id = {d.id}  isInCart = {0}/>
           )

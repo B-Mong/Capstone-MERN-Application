@@ -6,7 +6,7 @@ import ShopView from './pages/ShopView'
 import ItemView from './pages/ItemView'
 
 function App() {
-
+  document.title = 'E-commerce'
   return (
     <Router>
       <Routes>

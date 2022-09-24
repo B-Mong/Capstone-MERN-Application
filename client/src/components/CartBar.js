@@ -7,9 +7,8 @@ function CartBar(props){
             <form method="POST" action= '/api/removeitem?_method=DELETE'> 
                 <button name="id" value={props.id}><Dash/></button>
             </form>
-            <form method="PUT" action= '/api/cart/count'>
+            <form method="POST" action= {`/api/cart/count/${props.id}?_method=PUT`}>
                 <input type="number" name="count" min="0"/>
-                <input type="hidden" name="id" value={props.id}/>
             </form>
             <a href={`/products/${props.id}`}>
                 <Search/>

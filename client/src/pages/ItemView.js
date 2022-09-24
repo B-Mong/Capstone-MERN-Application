@@ -4,9 +4,6 @@ import { useParams } from "react-router-dom"
 import NavBar from "../components/NavBar"
 
 import InCartCount from "../components/InCartCount"
-
-//REACT_API_URL = 'http://localhost:3001/api'
-
 function ItemView(){
 
     const [data, setData] = useState(null)
@@ -14,8 +11,7 @@ function ItemView(){
     console.log(id)
 
     useEffect(() => {
-
-        fetch(process.env.REACT_API_URL + `/products/${id}`)
+        fetch(`/api/products/${id}`)
         .then((res) => res.json())
         .then((data) => setData(data))
     }, []);
@@ -54,7 +50,7 @@ function RenderPage(data){
 
                 <InCartCount id = {data.id}/>
 
-                <form action="/additem" method="POST">
+                <form action="/api/additem" method="POST">
                     <button name="id" value={data.id}>Add To Cart</button>
                 </form>
             </div>
