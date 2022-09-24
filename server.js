@@ -6,7 +6,6 @@ const db = require('./models')
 const methodOverride = require('method-override');
 require('dotenv').config()
 
-
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
