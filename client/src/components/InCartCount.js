@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 function InCartCount(props){
 
     const [data, setData] = useState(null)
-
+    //gets the count for the specific item it represents
     useEffect(() => {
         fetch(`/api/cart/count/${props.id}`)
         .then((res) => res.json())

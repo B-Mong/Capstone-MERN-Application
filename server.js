@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use(express.static(path.resolve(__dirname, './client/build')));
 
+//returns products from api
 app.get('/api/products',(req,res) => {
   fetch('https://dummyjson.com/products')
   .then(response => response.json())
@@ -18,6 +19,8 @@ app.get('/api/products',(req,res) => {
 
 
 })
+
+//returns array of products from compiled from api
 app.get ('/api/cart',(req,res) => {
   db.Item.find().then( items => {
     Promise.all(items.map(i => {
@@ -28,6 +31,8 @@ app.get ('/api/cart',(req,res) => {
     .then(data => res.json(data))
   })
 })
+
+//add item to cart and if it already is in cart increment count by one
 app.post('/api/additem', (req, res)=>{
     db.Item.findOne({id: req.body.id}).then(item => {
       if(item == null){
@@ -49,11 +54,13 @@ app.post('/api/additem', (req, res)=>{
     
 })
 
+//removes item from cart
 app.delete('/api/removeitem', (req, res)=>{
   db.Item.findOneAndDelete({id: req.body.id})
   .then(() => res.redirect('/cart') )
 })
 
+//gets a specific products data
 app.get('/api/products/:id', (req, res)=>{
   fetch(`https://dummyjson.com/products/${req.params.id}`)
   .then(response => response.json())
@@ -63,6 +70,7 @@ app.get('/api/products/:id', (req, res)=>{
   })
 })
 
+//Return the amount of item in cart
 app.get('/api/cart/count/:id', (req, res)=>{
   db.Item.findOne({id: req.params.id})
   .then(item => {
@@ -75,12 +83,14 @@ app.get('/api/cart/count/:id', (req, res)=>{
   })
 })
 
+//changes the amount of item in cart
 app.put('/api/cart/count/:id', (req, res)=>{
   console.log('running'+req.body.count)
   db.Item.findOneAndUpdate({id: req.params.id}, {quantity: req.body.count})
   .then(() => res.redirect('/cart') )
 })
 
+//returns total cart count
 app.get('/api/cart/count', (req, res)=>{
   db.Item.find()
   .then(items => {
@@ -99,6 +109,7 @@ app.get('/api/cart/count', (req, res)=>{
 app.get('/*', (req, res)=>{
   res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
+
 app.listen(process.env.PORT, ()=>{
   console.log('listening on port 3001')
 })
