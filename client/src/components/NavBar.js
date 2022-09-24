@@ -3,7 +3,6 @@ import {Cart3,Shop} from 'react-bootstrap-icons'
 import { useEffect, useState } from 'react'
 
 function NavBar(){
-
     const [data, setData] = useState(null)
 
     useEffect(() => {
@@ -11,7 +10,7 @@ function NavBar(){
         .then((res) => res.json())
         .then((data) => setData(data))
     }, []);
-function NavBar(){
+
     return(
         <header id="NavBar">
             <h1>E-commerce</h1>
